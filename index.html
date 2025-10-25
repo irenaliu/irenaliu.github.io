@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Irena Liu - Portfolio</title>
+  <title>Irena Liu | Software Devloper</title>
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://kit.fontawesome.com/fc3d22d242.js" crossorigin="anonymous"></script>
@@ -16,7 +17,8 @@
       <div class="font-bold tracking-wide"><a href="https://irenaliu.github.io/"><img class="h-8 md:h-10 lg:h-12 w-auto"
             src="/assets/logo.png" alt="IYL"></a></div>
       <ul class="flex gap-10 font-semibold text-brandlightgray/70 uppercase text-sm tracking-wider">
-        <li><a href="#about" class="text-brandgreen hover:text-brandwhite transition">About</a></li>
+        <li><a href="#home" class="text-brandgreen hover:text-brandwhite transition">Home</a></li>
+        <li><a href="#about" class="hover:text-brandwhite transition">About</a></li>
         <li><a href="#projects" class="hover:text-brandwhite transition">Projects</a></li>
         <li><a href="#contact" class="hover:text-brandwhite transition">Contact</a></li>
       </ul>
@@ -24,7 +26,8 @@
   </nav>
 
   <!-- Hero -->
-  <section class="relative h-screen flex flex-col justify-center items-center text-center text-white overflow-hidden">
+  <section id="home"
+    class="relative h-screen flex flex-col justify-center items-center text-center text-white overflow-hidden">
     <!-- Background video -->
     <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
       <source src="/assets/hero.mp4" type="video/mp4">
@@ -47,18 +50,23 @@
         <p class="text-xl uppercase tracking-widest">Full Stack Developer</p>
         <ul class="flex justify-center md:justify-start gap-6 text-2xl">
           <li>
-            <a href="https://www.linkedin.com/in/irenaliu" class="hover:text-brandgreen transition">
+            <a href="https://www.linkedin.com/in/irenaliu" target="_blank" class="hover:text-brandgreen transition">
               <i class="fa-brands fa-linkedin"></i>
             </a>
           </li>
           <li>
-            <a href="https://github.com/irenaliu" class="hover:text-brandgreen transition">
+            <a href="https://github.com/irenaliu" target="_blank" class="hover:text-brandgreen transition">
               <i class="fa-brands fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://gitlab.com/irenaliu" target="_blank" class="hover:text-brandgreen transition">
+              <i class="fa-brands fa-gitlab"></i>
             </a>
           </li>
         </ul>
         <a href="#contact"
-          class="inline-block px-6 py-3 bg-brandgreen text-white rounded-lg font-semibold hover:bg-brandnavy transition">
+          class="inline-block px-6 py-3 bg-brandgreen/60 text-white rounded-lg font-semibold hover:bg-brandamber hover:text-brandnavy transition">
           Contact Me
         </a>
       </div>
@@ -70,69 +78,190 @@
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="max-w-5xl mx-auto px-6 py-20">
-    <h2 class="text-3xl font-bold text-brandgreen mb-6">About</h2>
-    <p class="text-brandgray leading-relaxed">Hello! My name is Irena. I currently work as a Software Developer at <a
-        href="https://blendable.ca/">Blendable</a>, where I have the opportunity to
-      create and enhance complete technical solutions, from user interfaces to app infrastructure. I started dabbling
-      in coding by learning how to customize my profile pages from playing Neopets during my childhood and Calgary
-      Planet/ Nexopia in high school. I rediscovered my love of coding many years later and graduated from
-      the Digital Media & IT program at the Northern Alberta Institute of Technology where I majored in Computer
-      Software Development. Working with data, making apps look good, upholding clean code and learning new technologies
-      are some of the things I enjoy. I care a lot
-      about sustainable living and hope to use my skills to support businesses and industries that promote environmental
-      sustainability in the future.</p>
-    <!-- List of technologies -->
-    <ul>
+  <div class="bg-gradient-to-b from-brandnavy to-brandnavy/80">
+    <!-- About -->
+    <section id="about" class="max-w-5xl mx-auto px-6 py-20">
+      <h2 class="text-3xl font-bold text-brandgreen mb-6 text-center">About</h2>
+      <p class="text-brandwhite leading-relaxed mb-6">
+        Hello! My name is Irena. I'm a Software Developer at
+        <a href="https://blendable.ca/" class="text-brandgreen hover:underline transition">Blendable</a>,
+        where I get to design and enhance complete technical solutions — from user interfaces to app infrastructure.
+      </p>
 
-    </ul>
-  </section>
+      <p class="text-brandwhite leading-relaxed mb-6">
+        My coding journey started in childhood, customizing profile pages on Neopets and later Calgary Planet/Nexopia.
+        Years later, I rediscovered that passion and graduated from the Digital Media &amp; IT program at the
+        Northern Alberta Institute of Technology, majoring in Computer Software Development.
+      </p>
 
-  <!-- Skills -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul class="skills-grid">
-      <li>non-stop learning</li>
-      <li>communicative</li>
-      <li>open-minded</li>
-    </ul>
-  </section>
+      <p class="text-brandwhite leading-relaxed mb-6">
+        Today, I enjoy working with data, crafting clean and maintainable code, and making applications look and feel
+        great. I'm always eager to learn new technologies and refine my skills.
+      </p>
 
-  <!-- Projects -->
-  <section id="projects" class="bg-gray-50 py-20 px-6">
-    <h2 class="text-3xl font-bold text-center text-brandgreen mb-10">Projects</h2>
-    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-      <div class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg transition">
-        <img src="assets/project1.png" alt="Project screenshot" class="w-full h-60 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-brandgray mb-2">OutToLunch Mobile App</h3>
-          <p class="text-brandgray/80 mb-4">OutToLunch is a mobile application I made as my final course project in the
-            10-week android development course
-            at NAIT. The idea behind it is that the app could help indecisive people (like me) decide what kind of food
-            to
-            eat around their area. This app will first choose a random cuisine from a predetermined list of cuisines.
-            Once a
-            cuisine is selected, the app will return the places that are still open at the time of the query.</p>
-          <p>Check out my live demo <a
-              href="https://nait.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=28cd8c29-5cf1-4c64-8b92-abf3004b8efe">here</a>
+      <p class="text-brandwhite leading-relaxed">
+        Beyond tech, I care deeply about sustainable living and hope to use my skills to support businesses and
+        industries that promote environmental sustainability in the future.
+      </p>
+    </section>
+
+    <hr class="my-12 h-1 w-1/2 mx-auto border-0 bg-gradient-to-r from-brandamber to-brandgreen/50 rounded-full">
+
+    <!-- Skills -->
+    <section id="skills" class="max-w-5xl mx-auto px-6 py-20">
+      <h2 class="text-3xl font-bold text-brandgreen mb-6 text-center">Skills</h2>
+      <p class="text-brandwhite leading-relaxed mb-6">I believe soft skills are just as important as our hard skills and
+        I am committed to continually strengthening both. Below are some of those skills, tools and technologies I've
+        applied throughout my development journey.
+      <div class="max-w-6xl mx-auto py-16 px-6 grid md:grid-cols-3 gap-8">
+        <div
+          class="group relative bg-brandnavy text-brandwhite p-8 rounded-lg shadow-lg transition transform hover:-translate-y-2 hover:shadow-2xl">
+          <div class="absolute top-0 left-0 w-full h-1 bg-brandgreen rounded-t-lg"></div>
+
+          <span class="block text-4xl font-bold text-brandgreen mb-4">01</span>
+          <h3 class="text-2xl font-semibold mb-2">Always Learning</h3>
+          <p class="text-sm leading-relaxed text-brandwhite/80">
+            Technology evolves quickly, and I believe in growing alongside it — continuously sharpening my skills and
+            exploring new tools.
           </p>
-          <a href="https://github.com/DMIT2504/dmit2504-e01-spring2020term-courseproject-irenaliu">View on GitHub</a>
+        </div>
+
+        <div
+          class="group relative bg-brandnavy text-brandwhite p-8 rounded-lg shadow-lg transition transform hover:-translate-y-2 hover:shadow-2xl">
+          <div class="absolute top-0 left-0 w-full h-1 bg-brandgreen rounded-t-lg"></div>
+
+          <span class="block text-4xl font-bold text-brandgreen mb-4">02</span>
+          <h3 class="text-2xl font-semibold mb-2">Communicative</h3>
+          <p class="text-sm leading-relaxed text-brandwhite/80">
+            Great work happens when ideas are shared openly. I value clarity and collaboration in every project I take
+            on.
+          </p>
+        </div>
+
+        <div
+          class="group relative bg-brandnavy text-brandwhite p-8 rounded-lg shadow-lg transition transform hover:-translate-y-2 hover:shadow-2xl">
+          <div class="absolute top-0 left-0 w-full h-1 bg-brandgreen rounded-t-lg"></div>
+
+          <span class="block text-4xl font-bold text-brandgreen mb-4">03</span>
+          <h3 class="text-2xl font-semibold mb-2">Open to Ideas</h3>
+          <p class="text-sm leading-relaxed text-brandwhite/80">
+            Every perspective brings value. I approach feedback and new concepts with curiosity, ready to adapt and
+            improve.
+          </p>
+        </div>
+
+      </div>
+      <!-- List of technologies -->
+      <div class="max-w-6xl mx-auto py-16 px-6">
+        <div class="relative bg-brandnavy text-brandwhite p-10 rounded-lg shadow-lg">
+          <div class="absolute top-0 left-0 w-full h-1 bg-brandgreen rounded-t-lg"></div>
+          <div class="grid md:grid-cols-3 gap-10">
+            <div>
+              <h3 class="text-xl font-semibold mb-4 text-brandgreen">Languages</h3>
+              <ul class="space-y-2">
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> Python</li>
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> JavaScript</li>
+              </ul>
+
+              <h3 class="text-xl font-semibold mt-8 mb-4 text-brandgreen">Frameworks</h3>
+              <ul class="space-y-2">
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> Django</li>
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> Bootstrap</li>
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> Tailwind CSS</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-semibold mb-4 text-brandgreen">Libraries</h3>
+              <ul class="space-y-2">
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> Alpine.js</li>
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> Htmx</li>
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> jQuery</li>
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> React.js</li>
+              </ul>
+
+              <h3 class="text-xl font-semibold mt-8 mb-4 text-brandgreen">Databases</h3>
+              <ul class="space-y-2">
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> PostgreSQL</li>
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> SQL Server</li>
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> MongoDB</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-semibold mb-4 text-brandgreen">Other</h3>
+              <ul class="space-y-2">
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> Git</li>
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> Docker</li>
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> Kubernetes</li>
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> Visual Studio Code</li>
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> Node.js</li>
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> Sass</li>
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> Figma</li>
+                <li><i class="fa-solid fa-caret-right text-brandamber"></i> Shortcut</li>
+              </ul>
+            </div>
+
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <hr class="my-12 h-1 w-1/2 mx-auto border-0 bg-gradient-to-r from-brandamber to-brandgreen/50 rounded-full">
+
+    <section id="projects" class="max-w-5xl mx-auto px-6 py-20">
+      <h2 class="text-3xl font-bold text-center text-brandgreen mb-10">Projects</h2>
+      <p class="text-brandwhite leading-relaxed mb-6">
+        Projects are one of the best ways to grow as a developer and demonstrate your capabilities.
+        Here you'll find a selection of my most recent projects.
+      </p>
+
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 bg-brandnavy text-brandwhite rounded-lg shadow-lg overflow-hidden">
+
+          <div class="flex items-center justify-center bg-brandgray">
+            <img src="assets/out-to-lunch.gif" alt="OutToLunch project gif" class="max-h-[500px] w-auto object-contain">
+          </div>
+
+          <div class="p-8">
+            <h3 class="text-2xl font-semibold text-brandgreen mb-4">OutToLunch Mobile App</h3>
+            <p class="text-brandwhite/80 mb-4">
+              OutToLunch is a mobile application I created as my final project in the
+              10-week Android development course at NAIT. The app helps indecisive people
+              decide what to eat by randomly selecting a cuisine from a predefined list,
+              then showing restaurants that are still open at the time of the query.
+            </p>
+            <p class="mb-4">
+              Check out my live demo
+              <a href="https://nait.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=28cd8c29-5cf1-4c64-8b92-abf3004b8efe"
+                target="_blank" class="text-brandgreen hover:underline transition">here</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <!-- Contact -->
   <section id="contact" class="bg-brandnavy text-white py-16 text-center">
-    <h2 class="text-3xl font-bold mb-6">Say hello!</h2>
+    <h2 class="text-3xl font-bold mb-6 text-brandamber tracking-widest">Say hello!</h2>
     <p class="mb-4"><i class="fa-solid fa-envelope"></i> <a href="mailto:irenayliu@gmail.com"
-        class="underline hover:text-brandgreen">irenayliu@gmail.com</a></p>
-    <p class="flex justify-center gap-6 text-2xl">
-      <a href="https://www.linkedin.com/in/irenaliu" class="hover:text-brandgreen"><i
-          class="fa-brands fa-linkedin"></i></a>
-      <a href="https://github.com/irenaliu" class="hover:text-brandgreen"><i class="fa-brands fa-github"></i></a>
-    </p>
+        class="underline hover:text-brandgreen transition">irenayliu@gmail.com</a></p>
+    <ul class="flex justify-center gap-6 text-2xl">
+      <li>
+        <a href="https://www.linkedin.com/in/irenaliu" target="_blank" class="transition hover:text-brandgreen"><i
+            class="fa-brands fa-linkedin"></i></a>
+      </li>
+      <li>
+        <a href="https://github.com/irenaliu" target="_blank" class="transition hover:text-brandgreen"><i
+            class="fa-brands fa-github"></i></a>
+      </li>
+      <li>
+        <a href="https://gitlab.com/irenaliu" target="_blank" class="transition hover:text-brandgreen transition">
+          <i class="fa-brands fa-gitlab"></i>
+      </li>
+      </a>
+    </ul>
   </section>
 </body>
 
@@ -145,7 +274,8 @@
           brandnavy: '#333b50',
           brandgray: '#1a1a1a',
           brandlightgray: '#e5e7eb',
-          brandwhite: '#fff'
+          brandwhite: '#fff',
+          brandamber: "#f59e0b"
         },
         fontFamily: {
           sans: ['Montserrat', 'ui-sans-serif', 'system-ui'],
