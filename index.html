@@ -15,7 +15,21 @@
 
 <body class="scroll-smooth">
   <nav x-data="{ 
-      open: false, 
+      open: false,
+      active: '#home',
+      init() {
+        // IntersectionObserver setup
+        const sections = document.querySelectorAll('section[id]');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              this.active = '#' + entry.target.id;
+            }
+          });
+        }, { threshold: 0, rootMargin: '-20px 0px -80% 0px' } ); // mark section as active when its top is 20% down from the top of the viewport
+
+        sections.forEach(section => observer.observe(section));
+      },
       slowScroll(e) {
         const link = e.target.closest('a[href^=\'#\']');
         if (!link) return; // ignore clicks that aren't anchor links
@@ -70,22 +84,55 @@
 
       <!-- Desktop Menu -->
       <ul class="hidden md:flex gap-10 font-semibold text-brandlightgray/70 uppercase text-sm tracking-wider">
-        <li><a href="#home" class="text-brandgreen hover:text-brandwhite transition">Home</a></li>
-        <li><a href="#about" class="hover:text-brandwhite transition">About</a></li>
-        <li><a href="#skills" class="hover:text-brandwhite transition">Skills</a></li>
-        <li><a href="#projects" class="hover:text-brandwhite transition">Projects</a></li>
-        <li><a href="#contact" class="hover:text-brandwhite transition">Contact</a></li>
+        <li><a href="#home" :class="active === '#home' ? 'text-brandgreen' : 'text-brandlightgray/70'"
+            class="text-brandgreen hover:text-brandwhite transition">Home</a></li>
+        <li><a href="#about" :class="active === '#about' ? 'text-brandgreen' : 'text-brandlightgray/70'"
+            class="hover:text-brandwhite transition">About</a></li>
+        <li><a href="#skills" :class="active === '#skills' ? 'text-brandgreen' : 'text-brandlightgray/70'"
+            class="hover:text-brandwhite transition">Skills</a></li>
+        <li><a href="#projects" :class="active === '#projects' ? 'text-brandgreen' : 'text-brandlightgray/70'"
+            class="hover:text-brandwhite transition">Projects</a></li>
       </ul>
     </div>
 
     <!-- Mobile Menu -->
     <ul x-show="open" x-transition
       class="md:hidden flex flex-col gap-4 pt-6 px-6 pb-4 text-sm uppercase bg-brandnavy/90 font-semibold text-brandlightgray/70 tracking-wider">
-      <li><a href="#home" class="text-brandgreen hover:text-brandwhite transition">Home</a></li>
-      <li><a href="#about" class="hover:text-brandwhite transition">About</a></li>
-      <li><a href="#skills" class="hover:text-brandwhite transition">Skills</a></li>
-      <li><a href="#projects" class="hover:text-brandwhite transition">Projects</a></li>
-      <li><a href="#contact" class="hover:text-brandwhite transition">Contact</a></li>
+      <li class="pb-4">Menu
+        <ul class="flex flex-col gap-4 px-8 pt-4">
+          <li><a href="#home" :class="active === '#home' ? 'text-brandgreen' : 'text-brandlightgray/70'"
+              class="text-brandgreen hover:text-brandwhite transition">Home</a></li>
+          <li><a href="#about" :class="active === '#about' ? 'text-brandgreen' : 'text-brandlightgray/70'"
+              class="hover:text-brandwhite transition">About</a></li>
+          <li><a href="#skills" :class="active === '#skills' ? 'text-brandgreen' : 'text-brandlightgray/70'"
+              class="hover:text-brandwhite transition">Skills</a></li>
+          <li><a href="#projects" :class="active === '#projects' ? 'text-brandgreen' : 'text-brandlightgray/70'"
+              class="hover:text-brandwhite transition">Projects</a></li>
+        </ul>
+      </li>
+      <li class="pb-4">Get in Touch
+        <ul class="flex flex-col gap-4 px-8 pt-4">
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:irenayliu@gmail.com">irenayliu@gmail.com</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/irenaliu" target="_blank" class="hover:text-brandgreen transition">
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/irenaliu" target="_blank" class="hover:text-brandgreen transition">
+              <i class="fa-brands fa-github"></i> Github
+            </a>
+          </li>
+          <li>
+            <a href="https://gitlab.com/irenaliu" target="_blank" class="hover:text-brandgreen transition">
+              <i class="fa-brands fa-gitlab"></i> Gitlab
+            </a>
+          </li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -315,21 +362,26 @@
     <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-brandamber tracking-widest">Say hello!</h2>
     <p class="mb-4"><i class="fa-solid fa-envelope"></i> <a href="mailto:irenayliu@gmail.com"
         class="underline hover:text-brandgreen transition">irenayliu@gmail.com</a></p>
-    <ul class="flex justify-center gap-6 text-2xl">
-      <li>
-        <a href="https://www.linkedin.com/in/irenaliu" target="_blank" class="transition hover:text-brandgreen"><i
-            class="fa-brands fa-linkedin"></i></a>
-      </li>
-      <li>
-        <a href="https://github.com/irenaliu" target="_blank" class="transition hover:text-brandgreen"><i
-            class="fa-brands fa-github"></i></a>
-      </li>
-      <li>
-        <a href="https://gitlab.com/irenaliu" target="_blank" class="transition hover:text-brandgreen transition">
-          <i class="fa-brands fa-gitlab"></i>
-      </li>
+    <div class="flex flex-col items-center justify-center">
+      <ul class="flex justify-center gap-6 text-2xl pb-12">
+        <li>
+          <a href="https://www.linkedin.com/in/irenaliu" target="_blank" class="transition hover:text-brandgreen"><i
+              class="fa-brands fa-linkedin"></i></a>
+        </li>
+        <li>
+          <a href="https://github.com/irenaliu" target="_blank" class="transition hover:text-brandgreen"><i
+              class="fa-brands fa-github"></i></a>
+        </li>
+        <li>
+          <a href="https://gitlab.com/irenaliu" target="_blank" class="transition hover:text-brandgreen transition">
+            <i class="fa-brands fa-gitlab"></i>
+        </li>
+        </a>
+      </ul>
+      <a href="#home">
+        <img class="h-10 md:h-12 lg:h-14 w-auto" src="/assets/logo.png" alt="IYL">
       </a>
-    </ul>
+    </div>
   </section>
 </body>
 
